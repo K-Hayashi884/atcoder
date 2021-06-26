@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "test_atcoder_sample",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "type": "shell",
+            "command": "${workspaceFolder}/cptest.sh",
+            "args": [
+                "${fileBasenameNoExtension}"
+            ]
+        }
+    ]
+}
