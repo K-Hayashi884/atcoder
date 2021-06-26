@@ -12,5 +12,4 @@ for i in range(int(n/2)):
         dp[s-1][b-1] = 1
         dp[b-1][s-1] = 1
 cnt = 0
-while np.count_nonzero(dp) != 0:
-    
+# while np.count_nonzero(dp) != 0:
