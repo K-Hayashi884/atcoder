@@ -1,7 +1,9 @@
+import time
+
 h, w, rs, cs = list(map(int, input().split()))
 n = int(input())
-wall_r = [[-1, w+1]]*h
-wall_c = [[-1, h+1]]*w
+wall_r = [[0, h+1] for _ in range(w)]
+wall_c = [[0, w+1] for _ in range(h)]
 
 for i in range(n):
     r, c = list(map(int, input().split()))
@@ -40,28 +42,24 @@ def upper_bound(l, t):
         if l[mid] == t:
             return l[mid+1]
         elif l[mid] > t:
-            i = mid
-        else:
             j = mid
+        else:
+            i = mid
     return l[i]
 
 for i in range(q):
     d, l = input().split()
     l = int(l)
-    if d == "D":
+    if d == "U":
         w = lower_bound(wall_r[cs-1], rs)
         rs = rs-l if rs-l>w else w+1
-        print(wall_r[cs-1])
-    elif d == "U":
+    elif d == "D":
         w = upper_bound(wall_r[cs-1], rs)
         rs = rs+l if rs+l<w else w-1
-        print(wall_r[cs-1])
     elif d == "R":
         w = upper_bound(wall_c[rs-1], cs)
         cs = cs+l if cs+l<w else w-1
-        print(wall_c[rs-1])
     elif d == "L":
         w = lower_bound(wall_c[rs-1], cs)
         cs = cs-l if cs-l>w else w+1
-        print(wall_c[rs-1])
     print(rs, cs)
