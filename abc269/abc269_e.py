@@ -4,8 +4,8 @@ a = 1
 b = n
 c = 1
 d = n
-cnt_x = -1
-cnt_y = -1
+cnt_x = n-1
+cnt_y = n-1
 
 while cnt_x != 0:
     mid = int((a+b)/2)
@@ -20,7 +20,7 @@ while cnt_x != 0:
 
 while cnt_y != 0:
     mid = int((c+d)/2)
-    print("?", a, b, c, mid)
+    print("?", 1, n, c, mid)
     t = int(input())
     if t > cnt_y - t:
         cnt_y -= t
