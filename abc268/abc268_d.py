@@ -28,10 +28,19 @@ class recursivedefaultdict(defaultdict):
         self.default_factory = type(self)
 
 d = recursivedefaultdict()
-for e in s:
+for e in t:
     i = 0
     tmp = d
-    while i < len(e)-1:
+    while len(e) > 0:
         while i < len(e) and e[i+1] != "_":
             i += 1
-        if 
+        if e[:i+1] in s:
+            tmp = tmp[e[:i+1]]
+            e = e[i+1:]
+        if len(e) > 0:
+            i = 0
+            while e[i+1] == "_":
+                i += 1
+            tmp = tmp[i+1]
+            e = e[i+1:]
+
