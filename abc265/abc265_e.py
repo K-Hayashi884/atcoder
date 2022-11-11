@@ -1,3 +1,5 @@
+# 想定解なんですけど
+
 n, m = list(map(int, input().split()))
 a, b, c, d, e, f = list(map(int, input().split()))
 obs = set()
